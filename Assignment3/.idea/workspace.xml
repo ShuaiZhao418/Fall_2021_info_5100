@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da9dd7e7-8a29-43ca-b92e-7149de74ad90" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question1/Happy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question1/Moody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question1/Psychiatrist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question1/Sad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question2/AddOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question2/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question2/Context.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question2/MathOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question2/MultiplyOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Question2/SubtractOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-    </list>
+    <list default="true" id="da9dd7e7-8a29-43ca-b92e-7149de74ad90" name="Changes" comment="This is the commit of Assignment3." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +80,14 @@
       <option name="presentableId" value="Default" />
       <updated>1635185194067</updated>
     </task>
+    <task id="LOCAL-00001" summary="This is the commit of Assignment3.">
+      <created>1635186948066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635186948066</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,5 +100,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="This is the commit of Assignment3." />
+    <option name="LAST_COMMIT_MESSAGE" value="This is the commit of Assignment3." />
   </component>
 </project>
