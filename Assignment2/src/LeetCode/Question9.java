@@ -8,51 +8,55 @@ public class Question9 {
     // assume n = str.length()
     // TC = O(n)
     // SC = O(1)
-    public static String reverseWords(String str) {
+    public static String reverseWords(String input) {
         // corner case check
-        if (str == null || str.length() <= 1) {
-            return str;
+        if (input == null || input.length() <= 1) {
+            return input;
         }
-        // convert the whole string to char[]
-        char[] array = str.toCharArray();
+        // convert input to array
+        char[] array = input.toCharArray();
         // reverse the whole string
-        reverse(array, 0, array.length - 1);
-        // reverse word one by one
+        reverse (array, 0, array.length - 1);
+        // reverse each single word
+        // set two pointers
         int i = 0;
         int j = 0;
+
         while (j < array.length) {
             if (array[j] != ' ' && (j == 0 || array[j - 1] == ' ')) {
                 i = j;
-            }
-            if (array[j] !=' ' && (j == array.length - 1 || array[j + 1] == ' ')) {
+            } else if (array[j] != ' ' && (j == array.length - 1 || array[j + 1] == ' ')) {
                 reverse(array, i, j);
             }
             j++;
         }
-        // find the position of the begin and end of the string
-        int beg = 0;
-        int end = array.length - 1;
-        while (beg < array.length) {
-            if (array[beg] != ' ') {
-                break;
-            }
-            beg++;
-        }
-        while (end >= 0) {
-            if (array[end] != ' ') {
-                break;
-            }
-            end--;
-        }
-        return new String(array, beg, end);
+        return cleanSpaces(array);
     }
-    public static void reverse(char[] array, int i, int j) {
-        while (i <= j) {
-            char cur = array[i];
-            array[i] = array[j];
-            array[j] = cur;
-            i++;
-            j--;
+    private static void reverse(char[] array, int left, int right) {
+        if(array == null || array.length == 0) {
+            return ;
         }
+        while (left <= right) {
+            swap(array, left, right);
+            left++;
+            right--;
+        }
+    }
+    private static void swap(char[] array, int i, int j) {
+        char num = array[i];
+        array[i] = array[j];
+        array[j] = num;
+    }
+    public static String cleanSpaces(char[] a) {
+        int i = 0, j = 0;
+        int n = a.length;
+        while (j < n) {
+            while (j < n && a[j] == ' ') j++;             // skip spaces
+            while (j < n && a[j] != ' ') a[i++] = a[j++]; // keep non spaces
+            while (j < n && a[j] == ' ') j++;             // skip spaces
+            if (j < n) a[i++] = ' ';                      // keep only one space
+        }
+
+        return new String(a).substring(0, i);
     }
 }

@@ -14,30 +14,20 @@ public class Question2 {
     }
 
 
-    // assume m = word1.length(), n = word2.length(), z = wordDict.length
-    // TC = O(z * (m + n))
+    // assume n = words.length
+    // TC = O(n^2)
     // SC = O(1)
-    public static int shortestDistance(String[] wordDict, String word1, String word2) {
-        // corner case check
-        if (wordDict == null || wordDict.length <= 1) {
-            return -1;
-        }
-        // define two pointers i and j
-        // i point to position of word1
-        int i = Integer.MAX_VALUE;
-        // j point to position of word2
-        int j = Integer.MIN_VALUE;
-        // define min to record the minimum value
-        int min = Integer.MAX_VALUE;
-        for (int k = 0; k < wordDict.length; k++) {
-            if(wordDict[k] == word1) {
-                i = k;
+    public static int shortestDistance(String[] words, String word1, String word2) {
+        int minDistance = words.length;
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].equals(word1)) {
+                for (int j = 0; j < words.length; j++) {
+                    if (words[j].equals(word2)) {
+                        minDistance = Math.min(minDistance, Math.abs(i - j));
+                    }
+                }
             }
-            if(wordDict[k] == word2) {
-                j = k;
-            }
-            min = Math.min(min, Math.abs(i - j));
         }
-        return min;
+        return minDistance;
     }
 }

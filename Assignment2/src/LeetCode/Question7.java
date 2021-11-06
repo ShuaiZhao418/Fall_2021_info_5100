@@ -38,13 +38,12 @@ public class Question7 {
             result.add(val % 10);
             val = val / 10;
         }
-        int[] array = new int[result.size()];
+        StringBuilder sb = new StringBuilder();
         int count = 0;
         for(int z = result.size() - 1; z >= 0; z--) {
-            array[count] = result.get(z);
-            count++;
+            sb.append(result.get(z));
         }
-        return array.toString();
+        return new String(sb);
     }
 
 }

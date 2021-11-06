@@ -7,30 +7,27 @@ public class Question8 {
     }
     // assume n = str.length
     // TC = O(n)
-    // SC = O(n)
-    public static boolean checkPalindrome(String str) {
-        // corner case check
-        if (str == null || str.length() <= 1) {
+    // SC = O(1)
+    public static boolean checkPalindrome(String s) {
+        if (s.isEmpty()) {
             return true;
         }
-        // store all the valid character into a char[]
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z') {
-                sb.append(str.charAt(i));
-            } else if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
-                sb.append((char) (str.charAt(i) - 'A' + 'a'));
+        int head = 0, tail = s.length() - 1;
+        char cHead, cTail;
+        while(head <= tail) {
+            cHead = s.charAt(head);
+            cTail = s.charAt(tail);
+            if (!Character.isLetterOrDigit(cHead)) {
+                head++;
+            } else if(!Character.isLetterOrDigit(cTail)) {
+                tail--;
+            } else {
+                if (Character.toLowerCase(cHead) != Character.toLowerCase(cTail)) {
+                    return false;
+                }
+                head++;
+                tail--;
             }
-        }
-        // check Palindrome
-        int i = 0;
-        int j = sb.length() - 1;
-        while(i < j) {
-            if (sb.charAt(i) != sb.charAt(j)) {
-                return false;
-            }
-            i++;
-            j--;
         }
         return true;
     }

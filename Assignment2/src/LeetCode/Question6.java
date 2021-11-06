@@ -12,43 +12,18 @@ public class Question6 {
         System.out.println(checkIsomorphic(s, t));
     }
 
-    // replace character in the position of word1 by character in two
-    // and store the change into a hashmap, when finish, compare two strings
-    // assume m = s.length, n = t.length
+    // assume m = s.length
     // TC = O(m)
-    // SC = O(m)
+    // SC = O(1)
 
     public static boolean checkIsomorphic(String s, String t) {
-        if (s == null && t == null) {
-            return true;
-        }
-        if (s == null || t == null) {
-            return false;
-        }
-        if (s.length() != t.length()) {
-            return false;
-        }
-        // convert s and t to array
-        char[] string = s.toCharArray();
-        char[] target = t.toCharArray();
-        // define a hashmap<s's character, t's character> to store change relationship
-        HashMap<Character, Character> hashmap = new HashMap<>();
-        // traverse string s, and change characters in t to characters in s
-        for (int i = 0; i < target.length; i++) {
-            if (target[i] == string[i]) {
-                continue;
-            }
-            if (hashmap.containsKey(string[i])) {
-                string[i] = hashmap.get(string[i]);
-            } else {
-                hashmap.put(string[i], target[i]);
-                string[i] = target[i];
-            }
-        }
-        for (int i = 0; i < target.length; i++) {
-            if (string[i] != target[i]) {
-                return false;
-            }
+        int[] m1 = new int[256];
+        int[] m2 = new int[256];
+        int n = s.length();
+        for (int i = 0; i < n; i++) {
+            if (m1[s.charAt(i)] != m2[t.charAt(i)]) return false;
+            m1[s.charAt(i)] = i + 1;
+            m2[t.charAt(i)] = i + 1;
         }
         return true;
     }
