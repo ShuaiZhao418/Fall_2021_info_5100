@@ -60,14 +60,16 @@ public class LinkedList {
         return get(size);
     }
     public int get(int index) {
-        if (index >= size) {
-            return -1;
+        synchronized (this) {
+            if (index >= size) {
+                return -1;
+            }
+            Node current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            return current.val;
         }
-        Node current = head;
-        for (int i = 0; i < index; i++) {
-            current = current.next;
-        }
-        return current.val;
     }
     public int size(){
         return size;
