@@ -3,11 +3,11 @@ package Question1;
 public class LuxuryCar extends CarDecorator{
     public LuxuryCar(Car car) {
         super(car);
-        this.name += "Adding features of Luxury Car.";
-        super.assemble();
+        this.name = "Luxury Car";
     }
     @Override
     public void assemble() {
+        super.assemble();
     }
 
 }

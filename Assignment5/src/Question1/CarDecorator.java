@@ -2,12 +2,13 @@ package Question1;
 
 public class CarDecorator implements Car{
     String name = "";
-    protected Car car = null;
+    protected Car basiccar = null;
     public CarDecorator(Car car) {
-        this.car = car;
+        this.basiccar = car;
     }
     @Override
     public void assemble() {
-        System.out.print(name);
+        basiccar.assemble();
+        System.out.print(" Adding festures of " + this.name + ".");
     }
 }
