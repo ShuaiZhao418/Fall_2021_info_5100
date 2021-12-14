@@ -9,7 +9,7 @@ public class Main {
         Student student2 = new Student(2, "Jim", 3.7, "1998-03-12");
         Student student3 = new Student(3, "Danny", 3.4, "1990-05-13");
         Student student4 = new Student(4, "Red", 3.3, "2000-04-11");
-        PriorityQueue<Student> nameQueue = new PriorityQueue<>(new NameComparator());
+        PriorityQueue<Student> nameQueue = new PriorityQueue<Student>(new NameComparator());
         nameQueue.offer(student1);
         nameQueue.offer(student2);
         nameQueue.offer(student3);
@@ -20,7 +20,6 @@ public class Main {
             Student cur = nameQueue.poll();
             System.out.println(cur.getId() + "    " + cur.getName() + "    " + cur.getGpa() + "    " + cur.getDateOfBirth());
         }
-
 
         PriorityQueue<Student> gpaQueue = new PriorityQueue<>(new GpaComparator());
         gpaQueue.offer(student1);
