@@ -2,7 +2,6 @@ package Question4;
 
 import java.util.*;
 import java.util.function.Function;
-import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,16 +31,16 @@ public class Main {
 
         // 2. For all movies released before 2000, add the string "(Classic)" to the title of the movie using flatMap
 
-        genre1.getMovies().stream().map(r -> r.getTitle() + "(Classic)").forEach(System.out::println);
+       netflix.getGenres().stream().flatMap(genre -> genre.getMovies().stream())
+               .map(r -> r.getTitle() + "(Classic)").forEach(System.out::println);
 
         // 3. Get the latest 3 movies released using .limit() method of stream.
 
-        genre1.getMovies().stream().limit(2);
+        genre1.getMovies().stream().sorted((m1,m2) -> m1.getReleaseDate().compareTo(m2.getReleaseDate())).limit(3).
 
         // 4. Create a predicate for release date before 2000 and a predicate for release date before 1990
         //    and then Chain the predicates for finding movies between 1990 and 2000.
 
-        genre1.getMovies().stream().
 
         // 5. Write a method which that will add release year in the title of the movie and return the title and
         //    then use this method for all the movies.
