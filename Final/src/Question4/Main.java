@@ -2,6 +2,7 @@ package Question4;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,10 +41,12 @@ public class Main {
 
         // 4. Create a predicate for release date before 2000 and a predicate for release date before 1990
         //    and then Chain the predicates for finding movies between 1990 and 2000.
-
+        Predicate<Movie> predicate1 = movie -> movie.getReleaseDate().getYear() < 1990;
+        Predicate<Movie> predicate2 = movie -> movie.getReleaseDate().getYear() > 2000;
 
         // 5. Write a method which that will add release year in the title of the movie and return the title and
         //    then use this method for all the movies.
+
 
         // addDateToTitle() method was wrote in Movie class
 
