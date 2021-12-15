@@ -36,7 +36,7 @@ public class Main {
 
         // 3. Get the latest 3 movies released using .limit() method of stream.
 
-        genre1.getMovies().stream().sorted((m1,m2) -> m1.getReleaseDate().compareTo(m2.getReleaseDate())).limit(3).
+        genre1.getMovies().stream().sorted((m1,m2) -> m1.getReleaseDate().compareTo(m2.getReleaseDate())).limit(3);
 
         // 4. Create a predicate for release date before 2000 and a predicate for release date before 1990
         //    and then Chain the predicates for finding movies between 1990 and 2000.
